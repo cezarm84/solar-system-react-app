@@ -1,11 +1,15 @@
 import React from 'react';
 import { Planet } from '../model/Planet';
-import './PlanetDetails.css';
+import '../components/styles/PlanetDetails.css';
+
 type Props = {
   planet: Planet;
+  isFavorite: boolean;
+  addFavorite: (planetName: string) => void;
+  removeFavorite: (planetName: string) => void;
 };
 
-const PlanetDetails: React.FC<Props> = ({ planet }) => {
+const PlanetDetails: React.FC<Props> = ({ planet, isFavorite, addFavorite, removeFavorite }) => {
   return (
     <div className="planet-details">
       <h1>Planet Details</h1>
@@ -19,8 +23,12 @@ const PlanetDetails: React.FC<Props> = ({ planet }) => {
       <p>Orbital Period: {planet.orbitalPeriod}</p>
       <p>Description: {planet.desc}</p>
       <p>Moons: {planet.moons.join(', ')}</p>
+      <button onClick={() => isFavorite ? removeFavorite(planet.name) : addFavorite(planet.name)}>
+        {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
+      </button>
     </div>
   );
 };
 
 export default PlanetDetails;
+

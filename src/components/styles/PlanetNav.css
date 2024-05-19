@@ -1,0 +1,17 @@
+.planet-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .planet-nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+  
+  .planet-nav a:hover {
+    text-decoration: underline;
+  }
+  

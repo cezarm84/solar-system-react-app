@@ -1,0 +1,14 @@
+.favorite-page {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .favorite-page ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .favorite-page li {
+    padding: 5px 0;
+  }
+  

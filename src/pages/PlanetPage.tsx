@@ -3,9 +3,15 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Planet } from '../model/Planet';
 import PlanetDetails from '../components/PlanetDetails';
-import './PlanetPage.css';
+import './styles/PlanetPage.css';
 
-const PlanetPage: React.FC = () => {
+interface Props {
+  addFavorite: (bodyName: string) => void;
+  removeFavorite: (bodyName: string) => void;
+  favorites: string[];
+}
+
+const PlanetPage: React.FC<Props> = ({ addFavorite, removeFavorite, favorites }) => {
   const [planet, setPlanet] = useState<Planet | null>(null);
   const { id } = useParams<{ id: string }>();
 
@@ -22,12 +28,14 @@ const PlanetPage: React.FC = () => {
   }, [id]);
 
   return (
-    <div className="planet-page">
+    <div className={`planet-page ${planet?.name.toLowerCase()}`}>
       {planet ? (
-        <>
-          <h2>{planet.name}</h2>
-          <PlanetDetails planet={planet} />
-        </>
+        <PlanetDetails 
+          planet={planet} 
+          isFavorite={favorites.includes(planet.name)} 
+          addFavorite={addFavorite} 
+          removeFavorite={removeFavorite} 
+        />
       ) : (
         <p>Loading...</p>
       )}

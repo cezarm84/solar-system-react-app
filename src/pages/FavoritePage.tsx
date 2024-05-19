@@ -1,11 +1,23 @@
 import React from 'react';
-import './FavoritePage.css';
+import './styles/FavoritePage.css';
 
-const FavoritePage: React.FC = () => {
+interface Props {
+  favorites: string[];
+}
+
+const FavoritePage: React.FC<Props> = ({ favorites }) => {
   return (
     <div className="favorite-page">
-      <h2>Favorite Planets</h2>
-      {/* lista här */}
+      <h2>Favorite Celestial Bodies</h2>
+      {favorites.length > 0 ? (
+        <ul>
+          {favorites.map(favorite => (
+            <li key={favorite}>{favorite}</li>
+          ))}
+        </ul>
+      ) : (
+        <p>No favorite celestial bodies yet.</p>
+      )}
     </div>
   );
 }

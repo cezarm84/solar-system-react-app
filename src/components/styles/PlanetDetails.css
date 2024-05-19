@@ -1,0 +1,11 @@
+.planet-details {
+    text-align: center;
+  }
+  
+  .planet-details button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  

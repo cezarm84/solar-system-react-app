@@ -1,0 +1,63 @@
+.home-page {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .solar-system {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+  }
+  
+  .body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    background-color: gray;
+    transition: transform 0.3s;
+  }
+  
+  .body:hover {
+    transform: scale(1.2);
+
+  }
+  .body.mercury:hover {
+    transform: scale(2); 
+    
+  }
+  
+  .sun { width: 160px; height: 160px; background-color: #ffdd00; }
+  .mercury { width: 30px; height: 30px; background-color: #b0b0b0; }
+  .venus { width: 70px; height: 70px; background-color: #f5deb3; }
+  .earth { width: 80px; height: 80px; background-color: #2e8b57; }
+  .mars { width: 40px; height: 40px; background-color: #a52a2a; }
+  .jupiter { width: 150px; height: 150px; background-color: #daa520; }
+  .saturn { width: 120px; height: 120px; background-color: #f4a460; }
+  .uranus { width: 90px; height: 90px; background-color: #4682b4; }
+  .neptune { width: 90px; height: 90px; background-color: #4169e1; }
+  
+  .hovered-body {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #333;
+  }
+  .body:hover .planet-name {
+    display: block;
+    color: #333;
+  }
+  .planet-name {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
