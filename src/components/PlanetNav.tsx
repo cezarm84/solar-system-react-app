@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './styles/PlanetNav.css';
 import { Link } from 'react-router-dom';
 
 interface Props {

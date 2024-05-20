@@ -8,7 +8,7 @@ interface Props {
 const FavoritePage: React.FC<Props> = ({ favorites }) => {
   return (
     <div className="favorite-page">
-      <h2>Favorite Celestial Bodies</h2>
+      <h2>Favorites items:</h2>
       {favorites.length > 0 ? (
         <ul>
           {favorites.map(favorite => (
@@ -16,7 +16,7 @@ const FavoritePage: React.FC<Props> = ({ favorites }) => {
           ))}
         </ul>
       ) : (
-        <p>No favorite celestial bodies yet.</p>
+        <p>No favorite yet.....</p>
       )}
     </div>
   );

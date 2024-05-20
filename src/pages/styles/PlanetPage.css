@@ -1,15 +1,5 @@
 .planet-page {
-    padding: 20px;
+    padding: 50px;
     text-align: center;
   }
-  
-  .sun { background-color: #ffdd00; }
-  .mercury { background-color: #b0b0b0; }
-  .venus { background-color: #f5deb3; }
-  .earth { background-color: #2e8b57; }
-  .mars { background-color: #a52a2a; }
-  .jupiter { background-color: #daa520; }
-  .saturn { background-color: #f4a460; }
-  .uranus { background-color: #4682b4; }
-  .neptune { background-color: #4169e1; }
   

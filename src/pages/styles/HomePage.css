@@ -2,13 +2,31 @@
     text-align: center;
     padding: 20px;
   }
+  .nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+  }
+  
+  .nav-bar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin: 0 10px;
+  }
+  
+  .nav-bar a:hover {
+    text-decoration:none;
+  }
   
   .solar-system {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 60px;
     margin-top: 40px;
   }
   
@@ -30,34 +48,42 @@
     transform: scale(1.2);
 
   }
-  .body.mercury:hover {
-    transform: scale(2); 
+  .body.merkurius:hover {
+    transform: scale(1.25); 
     
   }
   
-  .sun { width: 160px; height: 160px; background-color: #ffdd00; }
-  .mercury { width: 30px; height: 30px; background-color: #b0b0b0; }
-  .venus { width: 70px; height: 70px; background-color: #f5deb3; }
-  .earth { width: 80px; height: 80px; background-color: #2e8b57; }
-  .mars { width: 40px; height: 40px; background-color: #a52a2a; }
-  .jupiter { width: 150px; height: 150px; background-color: #daa520; }
-  .saturn { width: 120px; height: 120px; background-color: #f4a460; }
-  .uranus { width: 90px; height: 90px; background-color: #4682b4; }
-  .neptune { width: 90px; height: 90px; background-color: #4169e1; }
-  
-  .hovered-body {
-    margin-top: 20px;
-    font-size: 1.2em;
-    color: #333;
-  }
   .body:hover .planet-name {
     display: block;
-    color: #333;
   }
   .planet-name {
-    display: none;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: none;
+    color: white;
+    font-size: 1.5em;
+    pointer-events: none;
+    font-family:monospace;
+   
   }
+  
+  .solen { width: 160px; height: 160px; background-color: #e6ca12; }
+  .merkurius { width: 35px; height: 35px; background-color: #b0b0b0; }
+  .venus { width: 70px; height: 70px; background-color: #f5deb3; }
+  .jorden { width: 80px; height: 80px; background-color: #2e8b57; }
+  .mars { width: 45px; height: 45px; background-color: #a52a2a; }
+  .jupiter { width: 150px; height: 150px; background-color: #daa520; }
+  .saturnus { width: 120px; height: 120px; background-color: #f4a460; }
+  .uranus { width: 90px; height: 90px; background-color: #4682b4; }
+  .neptunus { width: 90px; height: 90px; background-color: #4169e1; }
+  
+  @media (max-width: 768px) {
+    .solar-system {
+      margin-top: 30px; 
+    }
+  
+    .body {
+      width: 100px; 
+      height: 100px; 
+    }
+  }
+  

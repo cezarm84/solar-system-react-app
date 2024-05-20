@@ -1,11 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+
+
+body, html {
+  font-family: 'Orbitron', sans-serif;
+  background-color: #070724;
+ color: #f29999;
+}
 .planet-details {
-    text-align: center;
-  }
+  background-color: #070724;
+  background-image: url("../../assets/background-stars.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #33c7d8;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 8rem 2rem 10%;
+  gap: 5rem;
+  width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.planet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.planet-action-icon {
+  cursor: pointer;
+  font-size: 2rem;
+  color: #ffffff;
+  transition: color 0.3s;
+  padding: 15px;
+}
+
+.planet-action-icon:hover {
+  color: #ff0000;
+}
+
+.planet-description {
+  font-size: 1.2rem;
+  line-height: 2;
   
-  .planet-details button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
+}
+
+.planet-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.planet-info-item {
+  flex: 1 1 50%;
+  margin: 0.5rem 0; 
+}
+
+.planet-info-label {
+  font-weight: bold;
+}
+
+.planet-info-value {
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 1000px) {
+  .planet-details {
+    padding: 2rem 3rem;
   }
-  
+
+  .planet-info-item {
+    flex: 1 1 100%; 
+  }
+
+  .planet-name {
+    font-size: 1rem;
+
+  }
+
+  .planet-description {
+    font-size: 1rem;
+   
+  }
+
+  .planet-info-item {
+    margin: 0.25rem 0;
+  }
+}

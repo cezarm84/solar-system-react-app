@@ -21,7 +21,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route 
-            path="/planet/:id" 
+            path="/planet/:name" 
             element={<PlanetPage addFavorite={addFavorite} removeFavorite={removeFavorite} favorites={favorites} />} 
           />
           <Route path="/favorites" element={<FavoritePage favorites={favorites} />} />

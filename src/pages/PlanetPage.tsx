@@ -13,19 +13,29 @@ interface Props {
 
 const PlanetPage: React.FC<Props> = ({ addFavorite, removeFavorite, favorites }) => {
   const [planet, setPlanet] = useState<Planet | null>(null);
-  const { id } = useParams<{ id: string }>();
-
+  const { name } = useParams<{ name: string }>();
+ 
   useEffect(() => {
-    axios.get(`https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies/${id}`, {
-      headers: { 'x-zocom': 'API_KEY' }
+    if (!name) {
+      return; // om namet odefinerat
+    }
+    console.log(`Fetching data for planet name: ${name}`);
+    axios.get('https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies', {
+      headers: { 'x-zocom': 'solaris-1Cqgm3S6nlMechWO' }
     })
     .then(response => {
-      setPlanet(response.data);
+      console.log('API response:', response.data);
+      const planetData = response.data.bodies.find((body: Planet) => body.name.toLowerCase() === name.toLowerCase());
+      if (planetData) {
+        setPlanet(planetData);
+      } else {
+        console.error('Planet not found');
+      }
     })
     .catch(error => {
       console.error('Error fetching planet data:', error);
     });
-  }, [id]);
+  }, [name]);
 
   return (
     <div className={`planet-page ${planet?.name.toLowerCase()}`}>
