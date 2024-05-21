@@ -1,25 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 interface Props {
   bodies: string[];
+  onHover: (bodyName: string) => void;
 }
 
-const PlanetNav: React.FC<Props> = ({ bodies }) => {
-  const [hoveredBody, setHoveredBody] = useState<string>('');
-
-  const handleHover = (bodyName: string) => {
-    setHoveredBody(bodyName);
-  };
-
+const PlanetNav: React.FC<Props> = ({ bodies, onHover }) => {
   return (
     <nav className="planet-nav">
       {bodies.map((body, index) => (
         <Link to={`/planet/${body.toLowerCase()}`} key={index}>
           <div
-            className={`planet-button ${body.toLowerCase()} ${hoveredBody === body ? 'hovered' : ''}`}
-            onMouseEnter={() => handleHover(body)}
-            onMouseLeave={() => handleHover('')}
+            className={`planet-button ${body.toLowerCase()}`}
+            onMouseEnter={() => onHover(body)}
+            onMouseLeave={() => onHover('')}
           >
             {body}
           </div>

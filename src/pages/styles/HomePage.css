@@ -11,7 +11,7 @@
   }
   
   .nav-bar a {
-    color: white;
+    
     text-decoration: none;
     font-size: 1.2em;
     margin: 0 10px;
@@ -44,28 +44,15 @@
     transition: transform 0.3s;
   }
   
-  .body:hover {
-    transform: scale(1.2);
-
-  }
-  .body.merkurius:hover {
-    transform: scale(1.25); 
-    
-  }
-  
-  .body:hover .planet-name {
-    display: block;
-  }
   .planet-name {
-    position: absolute;
-    display: none;
-    color: white;
-    font-size: 1.5em;
-    pointer-events: none;
-    font-family:monospace;
+   display: none;
    
   }
   
+  .nav-link {
+    color: #ffff; 
+    font-weight: bold;
+  }
   .solen { width: 160px; height: 160px; background-color: #e6ca12; }
   .merkurius { width: 35px; height: 35px; background-color: #b0b0b0; }
   .venus { width: 70px; height: 70px; background-color: #f5deb3; }
