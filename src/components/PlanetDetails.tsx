@@ -1,8 +1,9 @@
 import React from 'react';
 import { Planet } from '../model/Planet';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faHeartBroken } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faHeart, faHeartBroken } from '@fortawesome/free-solid-svg-icons';
 import '../components/styles/PlanetDetails.css';
+import { Link } from 'react-router-dom';
 
 type Props = {
   planet: Planet;
@@ -15,16 +16,20 @@ const PlanetDetails: React.FC<Props> = ({ planet, isFavorite, addFavorite, remov
   return (
     <div className={`planet-details ${planet.name.toLowerCase()}`}>
       <div className="planet-header">
-        
         <div
           className="planet-action-icon"
           onClick={() => (isFavorite ? removeFavorite(planet.name) : addFavorite(planet.name))}
         >
           <FontAwesomeIcon icon={isFavorite ? faHeartBroken : faHeart} />
         </div>
+        <div className="planet-home-icon">
+          <Link to="/">
+            <FontAwesomeIcon icon={faHome} size='2x'/>
+          </Link>
+        </div>
       </div>
       <div className="planet-name-container">
-      <h1> {planet.name}</h1>
+        <h1> {planet.name}</h1>
       </div>
       <div className="planet-description">
         <p>{planet.desc}</p>
@@ -61,7 +66,6 @@ const PlanetDetails: React.FC<Props> = ({ planet, isFavorite, addFavorite, remov
           <span className="planet-info-value">{planet.orbitalPeriod}</span>
         </div>
       </div>
-    
     </div>
   );
 };

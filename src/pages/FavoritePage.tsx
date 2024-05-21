@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles/FavoritePage.css';
 
 interface Props {
@@ -8,6 +9,7 @@ interface Props {
 const FavoritePage: React.FC<Props> = ({ favorites }) => {
   return (
     <div className="favorite-page">
+      <Link to="/">Home</Link>
       <h2>Favorites items:</h2>
       {favorites.length > 0 ? (
         <ul>

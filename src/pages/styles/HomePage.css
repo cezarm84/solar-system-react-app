@@ -53,12 +53,83 @@
     color: #ffff; 
     font-weight: bold;
   }
-  .solen { width: 160px; height: 160px; background-color: #e6ca12; }
+  .solen {
+    width: 200px;
+    height: 200px;
+    background-color: #FFDE00;
+    border-radius: 50%;
+    box-shadow:
+      0 0 0 20px #FFDE0080,
+      0 0 0 40px #FFDE0040,
+      0 0 0 60px #FFDE0020,
+      0 0 0 80px #FFDE0010,
+      0 0 0 100px #FFDE0000,
+      0 0 40px 100px #FFDE0010;
+    animation:
+      sunrise 2s infinite linear forwards,
+      rays 2s 2s infinite linear;
+  }
+  
+  @keyframes sunrise {
+    0% {
+      box-shadow: none;
+    }
+  }
+  
+  @keyframes rays {
+    0% {
+      box-shadow: 
+      0 0 0 0 #FFDE0080,
+      0 0 0 20px #FFDE0080,
+      0 0 0 40px #FFDE0040,
+      0 0 0 60px #FFDE0020,
+      0 0 0 80px #FFDE0010,
+      0 0 40px 100px #FFDE0010;
+    }
+    100% {
+      box-shadow: 
+      0 0 0 20px #FFDE0080,
+      0 0 0 40px #FFDE0040,
+      0 0 0 60px #FFDE0020,
+      0 0 0 80px #FFDE0010,
+      0 0 0 100px #FFDE0000,
+      0 0 40px 100px #FFDE0010;
+    }
+  }
   .merkurius { width: 35px; height: 35px; background-color: #b0b0b0; }
   .venus { width: 70px; height: 70px; background-color: #f5deb3; }
   .jorden { width: 80px; height: 80px; background-color: #2e8b57; }
   .mars { width: 45px; height: 45px; background-color: #a52a2a; }
-  .jupiter { width: 150px; height: 150px; background-color: #daa520; }
+  .jupiter {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background-color: #daa520;
+    border-radius: 50%;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .jupiter::before,
+  .jupiter::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  
+  .jupiter::before {
+    width: 8px;
+    height: 200px;
+    border: 5px solid rgba(218, 165, 32, 0.7);
+  }
+  
+  .jupiter::after {
+    width: 10px;
+    height: 250px;
+    border: 10px solid rgba(218, 165, 32, 0.3);
+  }
   .saturnus { width: 120px; height: 120px; background-color: #f4a460; }
   .uranus { width: 90px; height: 90px; background-color: #4682b4; }
   .neptunus { width: 90px; height: 90px; background-color: #4169e1; }

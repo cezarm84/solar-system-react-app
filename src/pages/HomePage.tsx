@@ -10,9 +10,6 @@ const HomePage: React.FC = () => {
     <div className="home-page">
       <div className="nav-bar">
         <div>
-        <Link to="/" className="nav-link">Home</Link>
-        </div>
-        <div>
           <Link to="/favorites" className="nav-link">View Favorites</Link>
         </div>
       </div>

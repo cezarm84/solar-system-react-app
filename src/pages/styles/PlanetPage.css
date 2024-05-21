@@ -1,5 +1,13 @@
-.planet-page {
-    padding: 50px;
-    text-align: center;
-  }
-  
+
+.planet-page .jupiter::before,
+.jupiter::after {
+  display:none
+}
+.planet-page .jupiter{
+    box-shadow: none;
+}
+
+.planet-page .solen {
+    box-shadow: none;
+    animation: none;
+}

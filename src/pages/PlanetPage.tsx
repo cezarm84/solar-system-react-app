@@ -21,7 +21,7 @@ const PlanetPage: React.FC<Props> = ({ addFavorite, removeFavorite, favorites })
     }
     console.log(`Fetching data for planet name: ${name}`);
     axios.get('https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies', {
-      headers: { 'x-zocom': 'Api-key' }
+      headers: { 'x-zocom': 'api-key' }
     })
     .then(response => {
       console.log('API response:', response.data);
@@ -39,6 +39,7 @@ const PlanetPage: React.FC<Props> = ({ addFavorite, removeFavorite, favorites })
 
   return (
     <div className={`planet-page ${planet?.name.toLowerCase()}`}>
+     
       {planet ? (
         <PlanetDetails 
           planet={planet} 
